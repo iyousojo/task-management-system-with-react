@@ -1,0 +1,72 @@
+body{
+    background-color: burlywood;
+}
+
+.to-do-list{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 100px;
+  justify-items: center;
+
+}
+h1{
+    font-size: 40px;
+}
+button{
+    font-size: 14px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #464646;
+    transition: background-color 0.5s ease;
+}
+.add-button{
+    background-color: #3a3af7;
+    color: #f0f8ff;
+}
+.add-button:hover{
+    background-color: #2d2db7;
+}
+.delete-button{
+  background-color: #ff0000;
+}
+.delete-button:hover{
+     background-color: #ff00009a;
+}
+.move{
+    background-color: #008000;
+}
+.move:hover{
+    background-color: #008000e6;
+}
+input[type="text"]{
+    padding: 10px;
+    border-radius: 10px;
+    border:2px solid #dcdcdc;
+    color: #000000;
+}
+ol{
+    padding: 0;
+    list-style: none;
+}
+li{
+    font-size:2rem;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #fcfcfc;
+    margin-bottom: 10px;
+    border:3px solid #cbcbcb;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+.task{
+    flex: 1;
+    font-family:'Times New Roman', Times, serif;
+}
+.up , .move{
+    padding: 8px 12px;
+    font-size: 14px;
+    margin-left: 10px;
+}
