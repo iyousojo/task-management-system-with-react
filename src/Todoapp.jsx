@@ -76,19 +76,7 @@ import React,{ useState } from "react"
     )
 
  }
-// src/Todoapp.jsx
-{
- console.log('📦 Todoapp rendered!');
-   return (
-     <div style={{ padding: '2rem', textAlign: 'center' }}>
-     {/* your UI */}
-      <h1>✅ Hello from Todoapp!</h1>
-      {/* your existing UI here */}
-     </div>
-   );
- }
-
-
-
+// Debug: Log when Todoapp renders
+console.log('📦 Todoapp rendered!');
 
  export default Todoapp 
