@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-    base: '/https://github.com/iyousojo/task-management-system-with-react.gits/'
+    base: '/task-management-system-with-react/'
 })
