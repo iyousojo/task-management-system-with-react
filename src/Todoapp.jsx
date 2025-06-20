@@ -77,7 +77,7 @@ import React,{ useState } from "react"
 
  }
 // src/Todoapp.jsx
- export default function Todoapp() {
+{
  console.log('📦 Todoapp rendered!');
    return (
      <div style={{ padding: '2rem', textAlign: 'center' }}>
@@ -88,7 +88,7 @@ import React,{ useState } from "react"
    );
  }
 
-}
+
 
 
  export default Todoapp 
