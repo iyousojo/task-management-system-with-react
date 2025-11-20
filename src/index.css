@@ -1,72 +1,122 @@
-body{
-    background-color: burlywood;
+/* ======= GLOBAL ======= */
+body {
+  background: #f1f3f6;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  font-family: "Poppins", sans-serif;
 }
 
-.to-do-list{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top: 100px;
-  justify-items: center;
+.todo-wrapper {
+  width: 500px;
+  background: white;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
 
+.todo-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 30px;
+  text-transform: uppercase;
 }
-h1{
-    font-size: 40px;
+
+/* ===== INPUT ROW ===== */
+.input-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
 }
-button{
-    font-size: 14px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #464646;
-    transition: background-color 0.5s ease;
+
+.input-row input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #d9dce1;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
 }
-.add-button{
-    background-color: #3a3af7;
-    color: #f0f8ff;
+
+.input-row input:focus {
+  border-color: #4f8bff;
+  box-shadow: 0 0 5px rgba(79, 139, 255, 0.3);
 }
-.add-button:hover{
-    background-color: #2d2db7;
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
-.delete-button{
-  background-color: #ff0000;
+
+/* ===== BUTTONS ===== */
+
+.add-btn {
+  background: #4f8bff;
+  color: white;
 }
-.delete-button:hover{
-     background-color: #ff00009a;
+
+.add-btn:hover {
+  background: #2e6dfa;
 }
-.move{
-    background-color: #008000;
+
+.delete-btn {
+  background: #ff3e3e;
+  color: white;
 }
-.move:hover{
-    background-color: #008000e6;
+
+.delete-btn:hover {
+  background: #d63030;
 }
-input[type="text"]{
-    padding: 10px;
-    border-radius: 10px;
-    border:2px solid #dcdcdc;
-    color: #000000;
+
+.move-btn {
+  background: #2ecc71;
+  color: white;
+  padding: 8px 14px;
 }
-ol{
-    padding: 0;
-    list-style: none;
+
+.move-btn:hover {
+  background: #25b864;
 }
-li{
-    font-size:2rem;
-    font-weight: bold;
-    padding: 15px;
-    background-color: #fcfcfc;
-    margin-bottom: 10px;
-    border:3px solid #cbcbcb;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
+
+/* ===== TASK LIST ===== */
+
+.task-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
-.task{
-    flex: 1;
-    font-family:'Times New Roman', Times, serif;
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafbfd;
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 2px solid #ececec;
+  transition: 0.3s;
 }
-.up , .move{
-    padding: 8px 12px;
-    font-size: 14px;
-    margin-left: 10px;
+
+.task-item:hover {
+  border-color: #4f8bff;
+  transform: translateY(-3px);
+}
+
+.task-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #333;
+}
+
+.btn-group {
+  display: flex;
+  gap: 8px;
 }

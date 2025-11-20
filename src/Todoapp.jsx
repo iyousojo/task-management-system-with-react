@@ -1,82 +1,102 @@
- import { element } from "prop-types";
-import React,{ useState } from "react"
- 
- function Todoapp(){ 
-    const [Todoapp , setTask] = useState(["eat breakfast","take a shower","work out"]);
+import React, { useState } from "react";
 
-    const [newtask , setnewTask] = useState("");
+function Todoapp() {
+  const [Todoapp, setTask] = useState([
+    "Eat breakfast",
+    "Take a shower",
+    "Work out",
+  ]);
 
-    function handleinputtask(event){
-        setnewTask(event.target.value);
+  const [newtask, setnewTask] = useState("");
 
+  function handleinputtask(event) {
+    setnewTask(event.target.value);
+  }
+
+  function addtask() {
+    if (newtask.trim() !== "") {
+      setTask((t) => [...t, newtask]);
+      setnewTask("");
+    } else {
+      window.alert("Please enter a task!");
     }
-    function addtask(){
+  }
 
+  function deletetask(index) {
+    const updated = Todoapp.filter((_, i) => i !== index);
+    setTask(updated);
+  }
 
-        if(newtask.trim() !== ""){
-        setTask( t => [...t,newtask]);
-        setnewTask("");
-        }
-        else{
-            window.alert("please add task")
-        }
-        
-
+  function movetaskup(index) {
+    if (index > 0) {
+      const updated = [...Todoapp];
+      [updated[index], updated[index - 1]] = [
+        updated[index - 1],
+        updated[index],
+      ];
+      setTask(updated);
     }
-    function deletetask(index){
-        
+  }
 
-        const upadatetasks = Todoapp.filter((_,  i) => i  !== index);
-        setTask(upadatetasks);
+  function movetaskdown(index) {
+    if (index < Todoapp.length - 1) {
+      const updated = [...Todoapp];
+      [updated[index], updated[index + 1]] = [
+        updated[index + 1],
+        updated[index],
+      ];
+      setTask(updated);
     }
+  }
 
-    function movetaskup(index){
+  return (
+    <div className="todo-wrapper">
 
+      <h1 className="todo-title">My Tasks</h1>
 
-        if (index > 0){
-            const upadatetasks = [...Todoapp ];
+      <div className="input-row">
+        <input
+          type="text"
+          placeholder="Enter a task..."
+          value={newtask}
+          onChange={handleinputtask}
+        />
+        <button className="btn add-btn" onClick={addtask}>
+          Add Task
+        </button>
+      </div>
 
-            [upadatetasks [index] ,upadatetasks [index -1]] = 
-            [upadatetasks [index-1] ,upadatetasks [index]];
-            setTask(upadatetasks)
-        }
+      <ol className="task-list">
+        {Todoapp.map((task, index) => (
+          <li key={index} className="task-item">
+            <span className="task-text">{task}</span>
 
-    }
-     function movetaskdown(index){
+            <div className="btn-group">
+              <button
+                className="btn delete-btn"
+                onClick={() => deletetask(index)}
+              >
+                Delete
+              </button>
+              <button
+                className="btn move-btn"
+                onClick={() => movetaskup(index)}
+              >
+                ↑
+              </button>
+              <button
+                className="btn move-btn"
+                onClick={() => movetaskdown(index)}
+              >
+                ↓
+              </button>
+            </div>
+          </li>
+        ))}
+      </ol>
 
-
-          if (index < Todoapp.length - 1){
-            const upadatetasks = [...Todoapp ];
-
-            [upadatetasks [index] ,upadatetasks [index + 1]] = 
-            [upadatetasks [index   + 1] ,upadatetasks [index]];
-            setTask(upadatetasks)
-        }
-        
-    }
-    
-    return(
-   <div  className="to-do-list">
-
-
-    <h1>To-Do-list</h1>
-    <div>
-        <input  type="text" placeholder="Enter A task..." value={newtask}  onChange={handleinputtask}/>
-
-        <button  className="add-button"onClick={addtask}>add</button>
     </div>
-    <ol>  {Todoapp.map((Todoapp,index) =><li key={index}><span className="task">{Todoapp}
-        <button className="delete-button"   onClick={() =>  deletetask(index)}>delete</button>
-        <button className="move up"  onClick={() =>  movetaskup(index)}>move up</button>
-        <button className="move down"  onClick={() =>  movetaskdown(index)}>move down</button></span></li>)}
-    </ol>
-    
+  );
+}
 
-    </div>
-    )
-
- }
-// Debug: Log when Todoapp renders
-console.log('📦 Todoapp rendered!');
-
- export default Todoapp 
+export default Todoapp;
